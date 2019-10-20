@@ -1,6 +1,6 @@
 # ResNeXt-Pararllel-Keras
 Keras Implementation of "Aggregated Residual Transformations for Deep Neural Networks" (CVPR 2017) <br>
-You can check the paper here : [ArXiv](https://arxiv.org/pdf/1611.05431.pdf)
+You can check the paper here : [ArXiv](https://arxiv.org/pdf/1611.05431.pdf) <br>
 This code support parallel group convolution operation
 <br><br><br>
 
