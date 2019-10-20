@@ -2,6 +2,9 @@
 @author : Hyunwoong
 @when : 2019-10-15
 @homepage : https://github.com/gusdnd852
+
+THIS CODE IS NOT SUPPORT PARALLEL.
+IT IS JUST FOR COMPARISON. DON'T USE THIS CODE.
 """
 from keras import backend as K
 from keras.layers import Conv2D, BatchNormalization, Activation, Concatenate, Lambda
