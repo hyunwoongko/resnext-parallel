@@ -31,7 +31,8 @@ class GroupConv2D_Parallel:
 
     def __forward(self, x):
         i, outs = tf.constant(0), tf.TensorArray(dtype=tf.float32, size=self.cardinality)
-        x, i, outs = tf.while_loop(self.cond, self.body, [self.projection(x), i, outs])
+        x, i, outs = tf.while_loop(self.cond, self.body, [self.split(x), i, outs],
+                                   parallel_iterations=self.cardinality)
         outs = [outs.gather([i]) for i in range(self.cardinality)]
         out = tf.concat(outs, axis=4)
 
@@ -40,7 +41,9 @@ class GroupConv2D_Parallel:
         return out
 
     def body(self, x, i, outs):
-        group = tf.gather(x, i)
+        group = x.gather([i])
+        _, _, w, h, c = group.shape
+        group = tf.reshape(group, (self.batch_size, w, h, c))
         group = GroupConv2D_Backend(filters=self._out,
                                     kernel_size=self.kernel_size,
                                     padding='same',
@@ -48,7 +51,6 @@ class GroupConv2D_Parallel:
                                     strides=self.strides,
                                     kernel_initializer='he_normal',
                                     kernel_regularizer=self.weight_decay)(group)
-
         outs = outs.write(i, group)
         i = tf.add(i, 1)  # increase index to proceed loop
         return x, i, outs
@@ -56,11 +58,15 @@ class GroupConv2D_Parallel:
     def cond(self, x, i, outs):
         return tf.less(i, self.cardinality)
 
-    def projection(self, x):
+    def split(self, x):
         _, w, h, c = x.shape
         out = c // self.cardinality
+        arr = tf.TensorArray(size=self.cardinality, dtype=tf.float32)
 
-        x = tf.reshape(x, (self.batch_size, c, w, h))  # 1. change to channel first to prevent wrong reshape
-        x = tf.reshape(x, (self.cardinality, self.batch_size, out, w, h))  # 2. do linear projection
-        x = tf.reshape(x, (self.cardinality, self.batch_size, w, h, out))  # 3. restore to channel last
-        return x
+        for i in range(self.cardinality):
+            _from = i * out
+            _to = (i + 1) * out
+            val = x[:, :, :, _from:_to]
+            arr = arr.write(value=val, index=i)
+
+        return arr
