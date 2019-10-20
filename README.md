@@ -15,7 +15,7 @@ This code support parallel group convolution operation
 
 ![fig](https://user-images.githubusercontent.com/38183241/66823637-9ddf7d80-ef81-11e9-8482-c6c45591e6a0.png)
 <br><br>
-![code](https://user-images.githubusercontent.com/38183241/66823958-41c92900-ef82-11e9-8f2a-21d9301868e6.png)
+![code](https://user-images.githubusercontent.com/38183241/67158119-e9719d00-f36e-11e9-9489-43629462b9d7.png)
 <br><br><br>
 
 ## 3. Network Architecture (ResNeXt-18)
