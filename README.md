@@ -8,14 +8,14 @@ This code support parallel group convolution operation
 
 ![fig](https://user-images.githubusercontent.com/38183241/66824032-6ae9b980-ef82-11e9-988b-4db471c7d913.png)
 <br><br>
-![code](https://user-images.githubusercontent.com/38183241/67157289-29338700-f365-11e9-8ae4-92443fa3e68f.png)
+![code](https://user-images.githubusercontent.com/38183241/67158119-e9719d00-f36e-11e9-9489-43629462b9d7.png)
 <br><br><br>
 
 ## 2. Block Architecture (Basic Block)
 
 ![fig](https://user-images.githubusercontent.com/38183241/66823637-9ddf7d80-ef81-11e9-8482-c6c45591e6a0.png)
 <br><br>
-![code](https://user-images.githubusercontent.com/38183241/67158119-e9719d00-f36e-11e9-9489-43629462b9d7.png)
+![code](https://user-images.githubusercontent.com/38183241/67158135-263d9400-f36f-11e9-95fb-e5e619e62cb4.png)
 <br><br><br>
 
 ## 3. Network Architecture (ResNeXt-18)
