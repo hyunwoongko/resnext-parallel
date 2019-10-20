@@ -9,7 +9,7 @@
 
 ![fig](https://user-images.githubusercontent.com/38183241/66824032-6ae9b980-ef82-11e9-988b-4db471c7d913.png)
 <br><br>
-![code](https://user-images.githubusercontent.com/38183241/67158119-e9719d00-f36e-11e9-9489-43629462b9d7.png)
+![code](https://user-images.githubusercontent.com/38183241/67158691-55a3cf00-f376-11e9-8a0f-8d3ea26f9f30.png)
 <br><br><br>
 
 ## 2. Block Architecture (Basic Block)
