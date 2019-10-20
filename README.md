@@ -1,20 +1,22 @@
-# ResNeXt-Keras
-Keras Implementation of "Aggregated Residual Transformations for Deep Neural Networks" (CVPR 2017) <br>
-You can check the paper here : [ArXiv](https://arxiv.org/pdf/1611.05431.pdf)
+# ResNeXt-Pararllel-Keras
+* Keras Implementation of "Aggregated Residual Transformations for Deep Neural Networks" (CVPR 2017)
+* You can check the paper here : [https://arxiv.org/pdf/1611.05431.pdf](https://arxiv.org/pdf/1611.05431.pdf) 
+* Support parallel group convolution operation. (using tf.while_loop)
+* Only support tensorflow backend. (theano backend doesn't work)
 <br><br><br>
 
 ## 1. Group Convolution
 
 ![fig](https://user-images.githubusercontent.com/38183241/66824032-6ae9b980-ef82-11e9-988b-4db471c7d913.png)
 <br><br>
-![code](https://user-images.githubusercontent.com/38183241/66823281-dfbbf400-ef80-11e9-96f3-9601ad991d27.png)
+![code](https://user-images.githubusercontent.com/38183241/67158119-e9719d00-f36e-11e9-9489-43629462b9d7.png)
 <br><br><br>
 
 ## 2. Block Architecture (Basic Block)
 
 ![fig](https://user-images.githubusercontent.com/38183241/66823637-9ddf7d80-ef81-11e9-8482-c6c45591e6a0.png)
 <br><br>
-![code](https://user-images.githubusercontent.com/38183241/66823958-41c92900-ef82-11e9-8f2a-21d9301868e6.png)
+![code](https://user-images.githubusercontent.com/38183241/67158135-263d9400-f36f-11e9-95fb-e5e619e62cb4.png)
 <br><br><br>
 
 ## 3. Network Architecture (ResNeXt-18)
