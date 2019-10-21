@@ -8,7 +8,7 @@
 batch_size = 16
 epochs = 1000
 weight_decay = 5e-4
-cardinality = 32
+cardinality = 8
 
 # configuration for SGD
 init_lr = 1e-4 * batch_size

@@ -20,7 +20,7 @@ from keras.callbacks import ReduceLROnPlateau
 from util.conf import *
 
 # set GPU config
-os.environ['CUDA_VISIBLE_DEVICES'] = '1'  # '1' or '0' GPU
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'  # '1' or '0' GPU
 home_dir = home_dir_linux
 num_classes = 10
 img_height, img_width = 32, 32
